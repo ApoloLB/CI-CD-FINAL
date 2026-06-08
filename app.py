@@ -5,7 +5,7 @@ tasks = []
 
 @app.route("/")
 def home():
-    return jsonify({"mensagem": "TaskFlow API ativa"})
+    return jsonify({"mensagem": "TaskFlow API ativa - Desenvolvido por Apolo"})
 
 @app.route("/tasks", methods=["POST"])
 def create_task():
