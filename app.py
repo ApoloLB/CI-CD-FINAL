@@ -5,7 +5,7 @@ tasks = []
 
 @app.route("/")
 def home():
-    return jsonify({"mensagem": "TaskFlow API ativa"})
+    return jsonify({"mensagem": "TaskFlow API ativa - Desenvolvido por Apolo"})
 
 @app.route("/tasks", methods=["POST"])
 def create_task():
@@ -33,5 +33,8 @@ def update_task(id):
             return jsonify(task)
     return jsonify({"erro": "Tarefa não encontrada"}), 404
 
+import os
+
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    port = int(os.environ.get("PORT", 5001))
+    app.run(host="0.0.0.0", port=port, debug=True)
