@@ -26,3 +26,5 @@ def test_error_404():
     response = client.put("/tasks/999")
     assert response.status_code == 404
     assert response.get_json() == {"erro": "Tarefa não encontrada"}
+
+assert response.status_code == 400
